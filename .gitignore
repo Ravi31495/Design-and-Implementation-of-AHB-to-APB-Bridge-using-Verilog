@@ -1,0 +1,28 @@
+# ModelSim / simulator generated files
+*.wlf
+*.vcd
+*.vpd
+*.log
+*.jou
+transcript
+work/
+modelsim.ini
+*.cr.mti
+
+# Quartus generated output
+quartus/db/
+quartus/incremental_db/
+quartus/output_files/
+*.rpt
+*.summary
+*.qws
+*.sof
+*.pof
+*.smsg
+
+# Editor / OS files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
