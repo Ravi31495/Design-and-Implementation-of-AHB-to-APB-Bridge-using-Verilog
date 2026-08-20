@@ -7,16 +7,14 @@ A compact RTL implementation of an **AMBA AHB-to-APB bridge**. The bridge behave
 ## What the project contains
 
 ```text
-AHB master / test stimulus
+AHB Master / Test Stimulus
         │
-        │ HADDR, HTRANS, HWRITE, HWDATA
         ▼
 ┌───────────────────────┐
 │    AHB Slave          │
 │    Interface          │
-│  - pipeline signals   │
-│  - valid detection    │
-│  - address decoding   │
+│  capture / pipeline   │
+│  valid + address map  │
 └──────────┬────────────┘
            │
            ▼
@@ -28,13 +26,13 @@ AHB master / test stimulus
            │
            ▼
 ┌───────────────────────┐
-│      APB Master       │
+│       APB Master      │
 │ PSEL PENABLE PWRITE   │
 │ PADDR PWDATA          │
 └──────────┬────────────┘
            │
            ▼
-     APB peripheral
+      APB Peripheral
 ```
 
 ### Address decoding used by the recovered RTL
@@ -67,21 +65,13 @@ The recovered project contains test tasks for:
 
 The project report states that functional simulation was performed in **ModelSim** and synthesis was performed using **Intel Quartus Prime**, targeting **Cyclone V / 5CSXFC6D6F31I7ES**. The report also documents single and burst transaction waveforms and an RTL synthesis view.
 
-### Waveform snapshots
+### Visual documentation
 
-| Single read | Single write |
-|---|---|
-| ![Single read](docs/figures/single_read_waveform.png) | ![Single write](docs/figures/single_write_waveform.png) |
+![Bridge architecture](docs/figures/bridge_architecture.svg)
 
-| Burst read | Burst write |
-|---|---|
-| ![Burst read](docs/figures/burst_read_waveform.png) | ![Burst write](docs/figures/burst_write_waveform.png) |
+![APB transfer sequence](docs/figures/apb_transfer_sequence.svg)
 
-### Architecture / FSM
-
-![Bridge architecture](docs/figures/bridge_architecture.png)
-
-![APB controller FSM](docs/figures/apb_controller_fsm.png)
+The original archive also contains ModelSim screenshots and synthesis snapshots; those generated captures are not all reproduced as repository binaries, while the source RTL and project documentation are retained here.
 
 ## Tools
 
@@ -95,15 +85,12 @@ The project report states that functional simulation was performed in **ModelSim
 
 ## Running the simulation
 
-The original archive includes a ModelSim project file at `modelsim/ahb2apb.mpf`.
+The recovered archive contains a ModelSim project configuration. A typical flow is:
 
-A typical flow is:
-
-1. Open the ModelSim project.
-2. Compile the Verilog sources under `src/bridge/` and `sim/`.
-3. Start `top_tb`.
-4. Select the bridge and AHB/APB signals in the waveform window.
-5. Enable the desired transaction task in `sim/top_tb.v`.
+1. Compile the Verilog sources under `src/bridge/` and `sim/`.
+2. Start `top_tb`.
+3. Select the bridge and AHB/APB signals in the waveform window.
+4. Enable the desired transaction task in `sim/top_tb.v`.
 
 The recovered testbench currently selects the burst-read task by default. The other transaction calls are left in the testbench as commented alternatives.
 
@@ -117,10 +104,10 @@ The APB simulation model is intentionally simple and is not intended to represen
 
 ## Documentation
 
-- [Project report](docs/AHB_to_APB_Bridge_Project_Report.docx)
+- [Project report summary](docs/project_report.md)
 - [Bridge architecture notes](docs/architecture.md)
 - [Verification notes](docs/verification.md)
-- [ModelSim project](modelsim/ahb2apb.mpf)
+- [ModelSim notes](modelsim/README.md)
 
 ## Future extensions
 
