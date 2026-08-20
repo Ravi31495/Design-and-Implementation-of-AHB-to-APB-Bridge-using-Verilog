@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="430" viewBox="0 0 1100 430">
+<rect width="1100" height="430" fill="white"/>
+<text x="550" y="35" text-anchor="middle" font-family="Arial" font-size="25" font-weight="bold">AHB-to-APB Transfer Timing Concept</text>
+<text x="120" y="95" font-family="Arial" font-size="17" font-weight="bold">Clock</text>
+<text x="120" y="155" font-family="Arial" font-size="17" font-weight="bold">AHB valid</text>
+<text x="120" y="215" font-family="Arial" font-size="17" font-weight="bold">APB phase</text>
+<text x="120" y="275" font-family="Arial" font-size="17" font-weight="bold">PSEL</text>
+<text x="120" y="335" font-family="Arial" font-size="17" font-weight="bold">PENABLE</text>
+<g stroke="#333" stroke-width="2" fill="none">
+<line x1="230" y1="90" x2="1010" y2="90"/><line x1="230" y1="150" x2="1010" y2="150"/><line x1="230" y1="210" x2="1010" y2="210"/><line x1="230" y1="270" x2="1010" y2="270"/><line x1="230" y1="330" x2="1010" y2="330"/>
+<path d="M230 90 v-35 h55 v35 h55 v-35 h55 v35 h55 v-35 h55 v35 h55 v-35 h55 v35 h55 v-35 h55 v35 h55 v-35 h55 v35"/>
+<path d="M230 150 h110 v-25 h110 v25 h220 v-25 h110 v25 h230"/>
+<path d="M230 210 h110 v0 h220 v0 h110 v0 h340"/>
+<path d="M230 270 h110 v-35 h220 v0 h110 v35 h340"/>
+<path d="M230 330 h220 v0 h110 v-35 h110 v35 h230"/>
+</g>
+<text x="285" y="120" font-family="Arial" font-size="15">AHB request</text>
+<text x="355" y="195" font-family="Arial" font-size="15">SETUP</text>
+<text x="580" y="195" font-family="Arial" font-size="15">ENABLE</text>
+<text x="355" y="255" font-family="Arial" font-size="14">PSEL asserted</text>
+<text x="580" y="315" font-family="Arial" font-size="14">PENABLE asserted</text>
+<text x="550" y="390" text-anchor="middle" font-family="Arial" font-size="14">Conceptual sequence based on the project report; exact signal timing depends on the recovered RTL and APB response behavior.</text>
+</svg>
